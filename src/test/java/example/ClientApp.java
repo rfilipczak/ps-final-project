@@ -1,3 +1,5 @@
+package example;
+
 import edu.p.lodz.pl.client.ClientAPI;
 
 import java.util.Scanner;

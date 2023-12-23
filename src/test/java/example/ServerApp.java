@@ -1,3 +1,5 @@
+package example;
+
 import edu.p.lodz.pl.server.Server;
 
 import java.util.Scanner;
