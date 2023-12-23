@@ -1,4 +1,4 @@
-package edu.p.lodz.pl.common.network;
+package edu.p.lodz.pl.client;
 
 import java.io.IOException;
 

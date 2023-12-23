@@ -21,7 +21,7 @@ public class ClientServerCommTest {
         String licenceUserName = "Robert";
         String licenceKey = "SecretKey";
 
-        Server server = new Server(port);
+        Server server = new Server(port, "src/test/data/licences.json");
         Thread t = new Thread(server);
         t.start();
 

@@ -1,8 +1,5 @@
-package edu.p.lodz.pl.common.network;
+package edu.p.lodz.pl.client;
 
-import com.google.gson.Gson;
-import edu.p.lodz.pl.common.entities.LicenceRequest;
-import edu.p.lodz.pl.common.entities.LicenceRequestResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

@@ -10,7 +10,7 @@ import org.apache.logging.log4j.Logger;
 import java.io.*;
 import java.net.Socket;
 
-public class ClientHandler implements Runnable, AutoCloseable {
+public class ClientHandler implements Runnable {
     private final static Logger logger = LogManager.getLogger(ClientHandler.class);
 
     private final Socket socket;
@@ -36,7 +36,8 @@ public class ClientHandler implements Runnable, AutoCloseable {
                 Gson gson = new Gson();
                 LicenceRequest request = gson.fromJson(payload, LicenceRequest.class);
                 logger.debug("Received request from client: " + request);
-                LicenceRequestResponse response = LicenceRequestResponseFactory.createSuccessResponse(request.getLicenceUserName(), 600);
+                LicenceRequestResponse response = LicenceManager.getInstance().handleLicenceRequest(request);
+//                LicenceRequestResponse response = LicenceRequestResponseFactory.createSuccessResponse(request.getLicenceUserName(), 10);
                 out.write(response.toJson());
                 out.newLine();
                 out.flush();
@@ -45,9 +46,9 @@ public class ClientHandler implements Runnable, AutoCloseable {
                 break;
             }
         }
+        close();
     }
 
-    @Override
     public void close() {
         try {
             in.close();

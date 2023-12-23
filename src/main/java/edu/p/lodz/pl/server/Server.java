@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketException;
+import java.util.List;
 
 public class Server implements Runnable, AutoCloseable {
     private final static Logger logger = LogManager.getLogger(Server.class);
@@ -14,9 +15,16 @@ public class Server implements Runnable, AutoCloseable {
     private final ServerSocket serverSocket;
 
 
-    public Server(int port) throws IOException {
+    public Server(int port, String path) throws IOException {
         serverSocket = new ServerSocket(port);
         logger.info("Started server");
+        loadLicenceData(path);
+    }
+
+    public void loadLicenceData(String path) {
+        List<LicenceData> licenceDataList = LicenceDataLoader.loadLicenses(path);
+        logger.info(licenceDataList);
+        LicenceManager.getInstance().restart(licenceDataList);
     }
 
     @Override
@@ -41,6 +49,7 @@ public class Server implements Runnable, AutoCloseable {
     @Override
     public void close() throws Exception {
         serverSocket.close();
+        LicenceManager.getInstance().close();
         logger.info("Closed server");
     }
 }
