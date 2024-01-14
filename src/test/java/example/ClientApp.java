@@ -22,12 +22,13 @@ public class ClientApp {
                     return;
                 }
             }
-
-            do {
+            String prompt = "Type anything to request licence\nType stop to close";
+            System.out.println(prompt);
+            while (!scanner.nextLine().equals("stop")) {
                 String rsp = api.getLicenceToken();
                 System.out.println(rsp);
-                System.out.println("Type stop to close");
-            } while (!scanner.nextLine().equals("stop"));
+                System.out.println(prompt);
+            }
         }
     }
 }

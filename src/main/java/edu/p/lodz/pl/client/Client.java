@@ -5,7 +5,7 @@ import edu.p.lodz.pl.common.entities.LicenceRequest;
 import edu.p.lodz.pl.common.entities.LicenceRequestResponse;
 import edu.p.lodz.pl.common.entities.LicenceRequestResponseFactory;
 import edu.p.lodz.pl.common.utils.time.TimeUtils;
-import edu.p.lodz.pl.common.utils.timer.TimerManager;
+import edu.p.lodz.pl.common.utils.time.TimerManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

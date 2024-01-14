@@ -3,7 +3,9 @@ package edu.p.lodz.pl.server;
 import edu.p.lodz.pl.common.entities.LicenceRequest;
 import edu.p.lodz.pl.common.entities.LicenceRequestResponse;
 import edu.p.lodz.pl.common.entities.LicenceRequestResponseFactory;
-import edu.p.lodz.pl.common.utils.timer.TimerManager;
+import edu.p.lodz.pl.common.utils.time.TimerManager;
+import edu.p.lodz.pl.server.utils.LicenceData;
+import edu.p.lodz.pl.server.utils.LicenceKeyGenerator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

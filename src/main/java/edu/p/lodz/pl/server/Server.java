@@ -1,5 +1,7 @@
 package edu.p.lodz.pl.server;
 
+import edu.p.lodz.pl.server.utils.LicenceData;
+import edu.p.lodz.pl.server.utils.LicenceDataLoader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
